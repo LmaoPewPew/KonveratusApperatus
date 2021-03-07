@@ -23,6 +23,7 @@ public class WeightFragment extends Fragment {
         weightViewModel =
                 new ViewModelProvider(this).get(WeightViewModel.class);
         View root = inflater.inflate(R.layout.fragment_weight, container, false);
+        //Logic is Still Missing
         return root;
     }
 }

@@ -23,6 +23,8 @@ public class LengthFragment extends Fragment {
         lengthViewModel =
                 new ViewModelProvider(this).get(LengthViewModel.class);
         View root = inflater.inflate(R.layout.fragment_lenght, container, false);
+        //Logic is Still Missing
+
         return root;
     }
 }

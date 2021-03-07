@@ -22,6 +22,7 @@ public class TempFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         tempViewModel = new ViewModelProvider(this).get(TempViewModel.class);
         View root = inflater.inflate(R.layout.fragment_temp, container, false);
+        //Logic is Still Missing
         return root;
     }
 }
