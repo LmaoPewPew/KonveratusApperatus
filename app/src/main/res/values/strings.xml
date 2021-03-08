@@ -10,11 +10,30 @@
     <string name="menu_length">Länge</string>
     <string name="menu_temp">Temperatur</string>
     <string name="menu_weight">Gewicht</string>
-    <string name="menu_meilen_in_km">Meilen in Km</string>
-    <string name="menu_fuß_in_m">Fuß in M</string>
-    <string name="menu_inch_in_cm">Inch in Cm</string>
-    <string name="menu_celsius_in_fahrenheit">Celsius in Fahrenheit</string>
-    <string name="menu_celsius_in_kelvin">Celsius in Kelvin</string>
-    <string name="menu_kg_in_pfund">Kg in Pfund(ib)</string>
-    <string name="menu_ml_in_oz">Ml in oz</string>
+    
+    <string-array name="length">
+        <item>KiloMeter</item>
+        <item>Meter</item>
+        <item>Centimeter</item>
+        <item>MiliMeter</item>
+        <item>Milen</item>
+        <item>Foot</item>
+        <item>Inch</item>
+    </string-array>
+
+    <string-array name="temp">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+
+
+    <string-array name="weight">
+        <item>Tonne</item>
+        <item>Kilogramm</item>
+        <item>gramm</item>
+        <item>Tone (us)</item>
+        <item>Pounds</item>
+    </string-array>
+
 </resources>

@@ -10,40 +10,13 @@
             android:id="@+id/nav_lenght"
             android:icon="@drawable/ruler"
             android:title="@string/menu_length" />
-        <group >
-            <item
-                android:id="@+id/nav_meilen_in_km"
-                android:title="@string/menu_meilen_in_km" />
-            <item
-                android:id="@+id/nav_fuß_in_m"
-                android:title="@string/menu_fuß_in_m" />
-            <item
-                android:id="@+id/nav_inch_in_cm"
-                android:title="@string/menu_inch_in_cm" />
-        </group>
         <item
             android:id="@+id/nav_temp"
             android:icon="@drawable/thermometer"
             android:title="@string/menu_temp" />
-        <group >
-            <item
-                android:id="@+id/nav_celsius_in_fahrenheit"
-                android:title="@string/menu_celsius_in_fahrenheit" />
-            <item
-                android:id="@+id/nav_celsius_in_kelvin"
-                android:title="@string/menu_celsius_in_kelvin" />
-        </group>
         <item
             android:id="@+id/nav_sweight"
             android:icon="@drawable/weight_scale"
             android:title="@string/menu_weight" />
-        <group >
-            <item
-                android:id="@+id/nav_kg_in_pfund"
-                android:title="@string/menu_kg_in_pfund" />
-            <item
-                android:id="@+id/nav_ml_in_oz"
-                android:title="@string/menu_ml_in_oz" />
-        </group>
     </group>
 </menu>
