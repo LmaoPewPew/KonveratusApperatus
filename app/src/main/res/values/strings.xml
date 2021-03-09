@@ -12,12 +12,12 @@
     <string name="menu_weight">Gewicht</string>
     
     <string-array name="length">
-        <item>KiloMeter</item>
+        <item>Kilometer</item>
         <item>Meter</item>
         <item>Centimeter</item>
-        <item>MiliMeter</item>
-        <item>Milen</item>
-        <item>Foot</item>
+        <item>Milimeter</item>
+        <item>Meilen</item>
+        <item>Fuß</item>
         <item>Inch</item>
     </string-array>
 
@@ -27,13 +27,11 @@
         <item>Kelvin</item>
     </string-array>
 
-
     <string-array name="weight">
         <item>Tonne</item>
         <item>Kilogramm</item>
         <item>gramm</item>
-        <item>Tone (us)</item>
+        <item>Ton (us)</item>
         <item>Pounds</item>
     </string-array>
-
 </resources>
