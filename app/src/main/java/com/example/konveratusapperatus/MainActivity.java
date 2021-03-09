@@ -42,14 +42,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //MUSS MANN NOCH FERTIG MACHEN!!!
-/*
+
         //length
         Spinner spLengthIn = findViewById(R.id.spLengthIn);
         ArrayAdapter<CharSequence> adLengthIn = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
         adLengthIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spLengthIn.setAdapter(adLengthIn);
         spLengthIn.setOnItemSelectedListener(this);
-
+/*
         Spinner spLengthOut = findViewById(R.id.spLengthOut);
         ArrayAdapter<CharSequence> adLengthOut = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
         adLengthOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
