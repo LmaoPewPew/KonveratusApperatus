@@ -26,13 +26,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //View view = getActivity().getLayoutInflater;
+        //View view = getLayoutInflater.inflate(R.layout.fragment_lenght, null);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //DropInMenu Drawer
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_lenght, R.id.nav_temp, R.id.nav_sweight)
                 .setDrawerLayout(drawer)
@@ -42,9 +44,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //MUSS MANN NOCH FERTIG MACHEN!!!
-
+/*
         //length
         Spinner spLengthIn = findViewById(R.id.spLengthIn);
+        //Spinner spLenghtIn = view.findViewById(R.id.spLenghtIn);
         ArrayAdapter<CharSequence> adLengthIn = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
         adLengthIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spLengthIn.setAdapter(adLengthIn);
