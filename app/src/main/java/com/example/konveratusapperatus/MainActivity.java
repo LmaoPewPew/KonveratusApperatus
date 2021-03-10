@@ -26,15 +26,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //View view = getActivity().getLayoutInflater;
-        //View view = getLayoutInflater.inflate(R.layout.fragment_lenght, null);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //DropInMenu Drawer
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_lenght, R.id.nav_temp, R.id.nav_sweight)
                 .setDrawerLayout(drawer)
@@ -44,47 +43,52 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //MUSS MANN NOCH FERTIG MACHEN!!!
-/*
+
         //length
-        Spinner spLengthIn = findViewById(R.id.spLengthIn);
-        //Spinner spLenghtIn = view.findViewById(R.id.spLenghtIn);
+
+        View vLength = getLayoutInflater().inflate(R.layout.fragment_lenght, null);
+
+        Spinner spLengthIn = vLength.findViewById(R.id.spLengthIn);
         ArrayAdapter<CharSequence> adLengthIn = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
         adLengthIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spLengthIn.setAdapter(adLengthIn);
         spLengthIn.setOnItemSelectedListener(this);
-/*
-        Spinner spLengthOut = findViewById(R.id.spLengthOut);
+
+        Spinner spLengthOut = vLength.findViewById(R.id.spLengthOut);
         ArrayAdapter<CharSequence> adLengthOut = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
         adLengthOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spLengthOut.setAdapter(adLengthOut);
         spLengthOut.setOnItemSelectedListener(this);
-/*
+
         //Temperatur
-        Spinner spTempIn = findViewById(R.id.spTempIn);
+        View vTemp = getLayoutInflater().inflate(R.layout.fragment_temp, null);
+
+        Spinner spTempIn = vTemp.findViewById(R.id.spTempIn);
         ArrayAdapter<CharSequence> adTempIn = ArrayAdapter.createFromResource(this, R.array.temp, android.R.layout.simple_spinner_item);
         adTempIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTempIn.setAdapter(adLengthIn);
         spTempIn.setOnItemSelectedListener(this);
 
-        Spinner spTempOut = findViewById(R.id.spTempOut);
+        Spinner spTempOut = vTemp.findViewById(R.id.spTempOut);
         ArrayAdapter<CharSequence> adTempOut = ArrayAdapter.createFromResource(this, R.array.temp, android.R.layout.simple_spinner_item);
         adTempOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spTempOut.setAdapter(adLengthOut);
         spTempOut.setOnItemSelectedListener(this);
 
         //weight
-        Spinner spWeightIn = findViewById(R.id.spWeightIn);
+        View vWeight = getLayoutInflater().inflate(R.layout.fragment_weight, null);
+
+        Spinner spWeightIn = vWeight.findViewById(R.id.spWeightIn);
         ArrayAdapter<CharSequence> adWeightIn = ArrayAdapter.createFromResource(this, R.array.weight, android.R.layout.simple_spinner_item);
         adWeightIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spWeightIn.setAdapter(adLengthIn);
         spWeightIn.setOnItemSelectedListener(this);
 
-        Spinner spWeightOut = findViewById(R.id.spWeightOut);
+        Spinner spWeightOut = vWeight.findViewById(R.id.spWeightOut);
         ArrayAdapter<CharSequence> adWeightOut = ArrayAdapter.createFromResource(this, R.array.weight, android.R.layout.simple_spinner_item);
         adWeightOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spWeightOut.setAdapter(adLengthOut);
         spWeightOut.setOnItemSelectedListener(this);
-       // */
     }
 
     @Override
