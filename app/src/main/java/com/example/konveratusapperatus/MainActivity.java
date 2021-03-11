@@ -42,10 +42,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //MUSS MANN NOCH FERTIG MACHEN!!!
+        //Spinner Settings
 
         //length
-
         View vLength = getLayoutInflater().inflate(R.layout.fragment_lenght, null);
 
         Spinner spLengthIn = vLength.findViewById(R.id.spLengthIn);
@@ -89,6 +88,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adWeightOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spWeightOut.setAdapter(adLengthOut);
         spWeightOut.setOnItemSelectedListener(this);
+
+    }
+    //button Logic
+    public void calculate(View v){
+
+        /*//spinner ID
+        Spinner spLengthIn = findViewById(R.id.spLengthIn);
+        Spinner spLengthOut = findViewById(R.id.spLengthOut);
+        Spinner spTempIn = findViewById(R.id.spTempIn);
+        Spinner spTempOut = findViewById(R.id.spTempOut);
+        Spinner spWeightIn = findViewById(R.id.spWeightIn);
+        Spinner spWeightOut = findViewById(R.id.spWeightOut);
+        */
+
+        //Number
+
+
     }
 
     @Override
