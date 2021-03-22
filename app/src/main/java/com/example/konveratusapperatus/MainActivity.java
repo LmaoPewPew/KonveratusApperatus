@@ -1,6 +1,7 @@
 package com.example.konveratusapperatus;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        /* Kann sein das wir das doch nciht brauchen
         //Spinner Settings
-
         //length
         View vLength = getLayoutInflater().inflate(R.layout.fragment_lenght, null);
 
@@ -90,11 +91,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adWeightOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spWeightOut.setAdapter(adLengthOut);
         spWeightOut.setOnItemSelectedListener(this);
+        //*/
 
     }
     //button Logic
-    public void calculate(View v){
-
+    public void getData(View v){
         //spinner ID
         Spinner spLI= findViewById(R.id.spLengthIn);
         Spinner spLO = findViewById(R.id.spLengthOut);
@@ -103,21 +104,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner spWI = findViewById(R.id.spWeightIn);
         Spinner spWO = findViewById(R.id.spWeightOut);
 
+        //NumberInput
+        EditText numLi = findViewById(R.id.numLengthIn);
+        EditText numTi = findViewById(R.id.numTempIn);
+        EditText numWi = findViewById(R.id.numWeightIn);
 
-        //Number
-        EditText li = findViewById(R.id.numLengthIn);
+        /*//NumberOutput (Vllt braucht man nicht)
         EditText lo = findViewById(R.id.numLengthOut);
-        EditText ti = findViewById(R.id.numTempIn);
         EditText to = findViewById(R.id.numTempOut);
-        EditText wi = findViewById(R.id.numWeightIn);
         EditText wo = findViewById(R.id.numWeightOut);
+        //*/
+        double li = 0,ti = 0,wi = 0;
+        //li = Double.valueOf(numLi.getText().toString());
+        //ti = Double.valueOf(numTi.getText().toString());
+        //wi = Double.valueOf(numWi.getText().toString());
 
-        //double numLI = (double) li.getText();
+        //ausgabe in Logcat als Test
+        Log.d("info", li + " " + ti + " " + wi);
 
-        //Button
-        Button bLI = findViewById(R.id.btnCalcLenght);
-        Button bTI = findViewById(R.id.btnCalcTemp);
-        Button bWI = findViewById(R.id.btnCalcWeight);
+    }
+    // Hier wird gerechnet
+    public double calculate (){
+        return 0;
     }
 
     @Override
