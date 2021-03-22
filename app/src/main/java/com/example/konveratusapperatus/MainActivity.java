@@ -5,6 +5,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -93,18 +95,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     //button Logic
     public void calculate(View v){
 
-        /*//spinner ID
-        Spinner spLengthIn = findViewById(R.id.spLengthIn);
-        Spinner spLengthOut = findViewById(R.id.spLengthOut);
-        Spinner spTempIn = findViewById(R.id.spTempIn);
-        Spinner spTempOut = findViewById(R.id.spTempOut);
-        Spinner spWeightIn = findViewById(R.id.spWeightIn);
-        Spinner spWeightOut = findViewById(R.id.spWeightOut);
-        */
+        //spinner ID
+        Spinner spLI= findViewById(R.id.spLengthIn);
+        Spinner spLO = findViewById(R.id.spLengthOut);
+        Spinner spTI = findViewById(R.id.spTempIn);
+        Spinner spTO = findViewById(R.id.spTempOut);
+        Spinner spWI = findViewById(R.id.spWeightIn);
+        Spinner spWO = findViewById(R.id.spWeightOut);
+
 
         //Number
+        EditText li = findViewById(R.id.numLengthIn);
+        EditText lo = findViewById(R.id.numLengthOut);
+        EditText ti = findViewById(R.id.numTempIn);
+        EditText to = findViewById(R.id.numTempOut);
+        EditText wi = findViewById(R.id.numWeightIn);
+        EditText wo = findViewById(R.id.numWeightOut);
 
+        //double numLI = (double) li.getText();
 
+        //Button
+        Button bLI = findViewById(R.id.btnCalcLenght);
+        Button bTI = findViewById(R.id.btnCalcTemp);
+        Button bWI = findViewById(R.id.btnCalcWeight);
     }
 
     @Override

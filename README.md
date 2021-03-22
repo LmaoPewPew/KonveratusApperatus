@@ -1,3 +1,3 @@
 # KonveratusApperatus
 
-School Project cuz (not) fun
+Eine Einheits-Umrechnungs App in den man Jegliche EInheiten Konvertieren Kann!
