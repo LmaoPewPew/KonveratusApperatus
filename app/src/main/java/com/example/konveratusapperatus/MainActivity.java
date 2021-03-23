@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //Ads
+        //wenn published AndroidManifest.xml | content_main.xml | hier | die ca-app-pub-xxx ändern!
         adBanner = findViewById(R.id.adView);
 
         //MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
