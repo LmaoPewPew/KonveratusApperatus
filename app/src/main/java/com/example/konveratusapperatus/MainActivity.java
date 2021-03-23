@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -24,6 +27,10 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
+
+    //ads
+    AdView adBanner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        //Ads
+        adBanner = findViewById(R.id.adView);
+
+        //MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        AdRequest adReq = new AdRequest.Builder().build();
+        adBanner.loadAd(adReq);
 
         /* Kann sein das wir das doch nciht brauchen
         //Spinner Settings
