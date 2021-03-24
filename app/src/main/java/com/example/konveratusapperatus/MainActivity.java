@@ -125,18 +125,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         EditText numTi = findViewById(R.id.numTempIn);
         EditText numWi = findViewById(R.id.numWeightIn);
 
-        /*//NumberOutput (Vllt braucht man nicht)
-        EditText lo = findViewById(R.id.numLengthOut);
-        EditText to = findViewById(R.id.numTempOut);
-        EditText wo = findViewById(R.id.numWeightOut);
-        //*/
+        //NumberOutput
+        EditText numLo = findViewById(R.id.numLengthOut);
+        EditText numTo = findViewById(R.id.numTempOut);
+        EditText numWo = findViewById(R.id.numWeightOut);
+
+
         double li = 0,ti = 0,wi = 0;
         //li = Double.valueOf(numLi.getText().toString());
         //ti = Double.valueOf(numTi.getText().toString());
         //wi = Double.valueOf(numWi.getText().toString());
 
         //ausgabe in Logcat als Test
-        Log.d("info", li + " " + ti + " " + wi);
+        //Log.d("info", li + " " + ti + " " + wi);
 
     }
     // Hier wird gerechnet
