@@ -56,12 +56,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //wenn published AndroidManifest.xml | content_main.xml | hier | die ca-app-pub-xxx ändern!
         adBanner = findViewById(R.id.adView);
 
-        //MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
-        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+
+        MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
         AdRequest adReq = new AdRequest.Builder().build();
         adBanner.loadAd(adReq);
 
-        /* Kann sein das wir das doch nciht brauchen
+        /* Kann sein das wir das doch nicht brauchen
         //Spinner Settings
         //length
         View vLength = getLayoutInflater().inflate(R.layout.fragment_lenght, null);
