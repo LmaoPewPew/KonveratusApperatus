@@ -29,6 +29,6 @@
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
-    <!--when Published Commentblcok removed, and other line too!
+    <!--when Published Commentblock removed, and other line too!
         ads:adUnitId="ca-app-pub-2320726719972355/2814947940"-->
 </androidx.constraintlayout.widget.ConstraintLayout>

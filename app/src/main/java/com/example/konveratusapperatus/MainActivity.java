@@ -1,6 +1,7 @@
 package com.example.konveratusapperatus;
 
 import android.os.Bundle;
+import android.telephony.mbms.StreamingServiceInfo;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -27,10 +28,10 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
-
     //ads
     AdView adBanner;
-
+    Spinner spLi, spLo, spTi, spTo, spWi, spWo;
+    EditText numLi, numLo, numTi, numTo, numWi, numWo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +57,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //wenn published AndroidManifest.xml | content_main.xml | hier | die ca-app-pub-xxx ändern!
         adBanner = findViewById(R.id.adView);
 
-
         MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
         AdRequest adReq = new AdRequest.Builder().build();
         adBanner.loadAd(adReq);
+
+
 
         /* Kann sein das wir das doch nicht brauchen
         //Spinner Settings
@@ -113,36 +115,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     //button Logic
     public void getData(View v){
         //spinner ID
-        Spinner spLI= findViewById(R.id.spLengthIn);
-        Spinner spLO = findViewById(R.id.spLengthOut);
-        Spinner spTI = findViewById(R.id.spTempIn);
-        Spinner spTO = findViewById(R.id.spTempOut);
-        Spinner spWI = findViewById(R.id.spWeightIn);
-        Spinner spWO = findViewById(R.id.spWeightOut);
+        spLi = findViewById(R.id.spLengthIn);
+        spLo = findViewById(R.id.spLengthOut);
+        spTi = findViewById(R.id.spTempIn);
+        spTo = findViewById(R.id.spTempOut);
+        spWi = findViewById(R.id.spWeightIn);
+        spWo = findViewById(R.id.spWeightOut);
 
         //NumberInput
-        EditText numLi = findViewById(R.id.numLengthIn);
-        EditText numTi = findViewById(R.id.numTempIn);
-        EditText numWi = findViewById(R.id.numWeightIn);
+        numLi = findViewById(R.id.numLengthIn);
+        numTi = findViewById(R.id.numTempIn);
+        numWi = findViewById(R.id.numWeightIn);
 
         //NumberOutput
-        EditText numLo = findViewById(R.id.numLengthOut);
-        EditText numTo = findViewById(R.id.numTempOut);
-        EditText numWo = findViewById(R.id.numWeightOut);
+        numLo = findViewById(R.id.numLengthOut);
+        numTo = findViewById(R.id.numTempOut);
+        numWo = findViewById(R.id.numWeightOut);
 
 
         double li = 0,ti = 0,wi = 0;
-        //li = Double.valueOf(numLi.getText().toString());
-        //ti = Double.valueOf(numTi.getText().toString());
-        //wi = Double.valueOf(numWi.getText().toString());
+        li = Double.parseDouble(numLi.getText().toString());
+        ti = Double.parseDouble(numTi.getText().toString());
+        wi = Double.parseDouble(numWi.getText().toString());
 
         //ausgabe in Logcat als Test
         //Log.d("info", li + " " + ti + " " + wi);
-
+        calculate(li, spLi, spLo);
+        //Log.d(output);
     }
+
     // Hier wird gerechnet
-    public double calculate (){
-        return 0;
+    public void calculate (double num, Spinner spIn, Spinner spOut){
+        //code
+        String text = spIn.getSelectedItem().toString();
+        if(text == "Kilometer"){
+            //   return num;
+            Log.d("info", "Test ob alles funktioniert");
+        }
     }
 
     @Override
