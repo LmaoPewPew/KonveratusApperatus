@@ -139,7 +139,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         wi = Double.parseDouble(numWi.getText().toString());
 
         //ausgabe in Logcat als Test
-        //Log.d("info", li + " " + ti + " " + wi);
         calculate(li, spLi, spLo);
         //Log.d(output);
     }
@@ -148,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void calculate (double num, Spinner spIn, Spinner spOut){
         //code
         String text = spIn.getSelectedItem().toString();
-        if(text == "Kilometer"){
+        if(text.equals("Kilometer")){
             //   return num;
             Log.d("info", "Test ob alles funktioniert");
         }
