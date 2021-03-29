@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -31,7 +32,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     //ads
     AdView adBanner;
     Spinner spLi, spLo, spTi, spTo, spWi, spWo;
-    EditText numLi, numLo, numTi, numTo, numWi, numWo;
+    EditText numLi, numTi, numWi;
+    TextView numLo, numTo, numWo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,18 +56,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //Ads
-        //wenn published AndroidManifest.xml | content_main.xml | hier | die ca-app-pub-xxx ändern!
+        //wenn published content_main.xml die ca-app-pub-xxx ändern!
         adBanner = findViewById(R.id.adView);
-
         MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
         AdRequest adReq = new AdRequest.Builder().build();
         adBanner.loadAd(adReq);
 
+                    //Spinner
+    /*      spLi = findViewById(R.id.spLengthIn);
+        spLo = findViewById(R.id.spLengthOut);
 
+        String[] length = {"Kilometer", "Meter", "Centimeter", "Milimeter", "Meilen", "Fuß", "Inch"};
+        ArrayAdapter ad = new ArrayAdapter<String>{ this, R.layout.support_simple_spinner_dropdown_item, length};
+        spLi.setAdapter(ad);
 
-        /* Kann sein das wir das doch nicht brauchen
-        //Spinner Settings
-        //length
+        String[] length2 = {"Kilometer", "Meter", "Centimeter", "Milimeter", "Meilen", "Fuß", "Inch"};
+        ArrayAdapter ad2 = new ArrayAdapter<String>{ this, R.layout.support_simple_spinner_dropdown_item, length2};
+        spLo.setAdapter(ad2);
+    */
+
+        /*  //length
         View vLength = getLayoutInflater().inflate(R.layout.fragment_lenght, null);
 
         Spinner spLengthIn = vLength.findViewById(R.id.spLengthIn);
@@ -109,49 +119,86 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adWeightOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spWeightOut.setAdapter(adLengthOut);
         spWeightOut.setOnItemSelectedListener(this);
-        //*/
-
+    //*/
     }
-    //button Logic
-    public void getData(View v){
-        //spinner ID
+
+    //button Logic Length
+    public void Length(View v){
+        double li = 0;
+
         spLi = findViewById(R.id.spLengthIn);
         spLo = findViewById(R.id.spLengthOut);
+
+        numLi = findViewById(R.id.numLengthIn);
+        numLo = findViewById(R.id.numLengthOut);
+        //li = Double.parseDouble(numLi.getText().toString());;
+
+        double value = calculate(li, spLi, spLo);
+        numLo.setText(Double.toString(value));
+    }
+
+    //button Logic Temp
+    public void Temp(View v){
+        double ti = 0;
+
         spTi = findViewById(R.id.spTempIn);
         spTo = findViewById(R.id.spTempOut);
+
+        numTi = findViewById(R.id.numTempIn);
+        numTo = findViewById(R.id.numTempOut);
+        //ti = Double.parseDouble(numTi.getText().toString());
+
+        double value = calculate(ti, spTi, spTo);
+        numLo.setText(Double.toString(value));
+    }
+
+    //button Logic Weight
+    public void Weight(View v){
+        double wi = 0;
+
         spWi = findViewById(R.id.spWeightIn);
         spWo = findViewById(R.id.spWeightOut);
 
-        //NumberInput
-        numLi = findViewById(R.id.numLengthIn);
-        numTi = findViewById(R.id.numTempIn);
         numWi = findViewById(R.id.numWeightIn);
-
-        //NumberOutput
-        numLo = findViewById(R.id.numLengthOut);
-        numTo = findViewById(R.id.numTempOut);
         numWo = findViewById(R.id.numWeightOut);
+        //wi = Double.parseDouble(numWi.getText().toString());
 
-
-        double li = 0,ti = 0,wi = 0;
-        li = Double.parseDouble(numLi.getText().toString());
-        ti = Double.parseDouble(numTi.getText().toString());
-        wi = Double.parseDouble(numWi.getText().toString());
-
-        //ausgabe in Logcat als Test
-        calculate(li, spLi, spLo);
-        //Log.d(output);
+        double value = calculate(wi, spWi, spWo);
+        numLo.setText(Double.toString(value));
     }
 
     // Hier wird gerechnet
-    public void calculate (double num, Spinner spIn, Spinner spOut){
-        //code
-        String text = spIn.getSelectedItem().toString();
-        if(text.equals("Kilometer")){
-            //   return num;
-            Log.d("info", "Test ob alles funktioniert");
+    public double calculate (double num, Spinner spIn, Spinner spOut) {
+        //Spinner
+        String unitIn = spIn.getSelectedItem().toString();
+        String unitOut = spOut.getSelectedItem().toString();
+
+        //Lenght
+        if (unitIn.equals("Kilometer")) {
+            Log.d("Penis", unitIn);
+            if (unitOut.equals("Meter")) {
+                // numLo = numLi * 10;
+                Log.d("Penis", unitOut);
+            }
         }
+
+        //Temp
+        if (unitIn.equals("Celsius")) {
+            if (unitOut.equals("Fahrenheit")) {
+                Log.d("Penis", unitOut);
+            }
+        }
+
+        //Weight
+        if (unitIn.equals("Tonne")) {
+            if (unitOut.equals("Fahrenheit")) {
+                Log.d("Penis", unitOut);
+            }
+        }
+
+        return 0;
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

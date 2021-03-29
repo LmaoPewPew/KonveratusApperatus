@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.weigth.WeightFragment">
 
-
-
     <Spinner
         android:id="@+id/spWeightIn"
         android:layout_width="140dp"
@@ -44,28 +42,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/numWeightOut"
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:hint="Ausgabe"
-        android:inputType="numberDecimal"
+        android:text="Ausgabe"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numWeightIn" />
 
     <Button
-        android:id="@+id/btnCalcWeight"
+        android:id="@+id/btnWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:onClick="getData"
+        android:onClick="Weight"
         android:text="Berechnen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numWeightOut"
         tools:ignore="OnClick" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
