@@ -8,7 +8,7 @@
 
     <Spinner
         android:id="@+id/spTempIn"
-        android:layout_width="140dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="55dp"
@@ -20,7 +20,7 @@
 
     <Spinner
         android:id="@+id/spTempOut"
-        android:layout_width="140dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"

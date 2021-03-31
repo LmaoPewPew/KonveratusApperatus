@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             li = Double.parseDouble(numLi.getText().toString());
-            double value = calculate(li, spLi, spLo);
+            double value = Math.round(calculate(li, spLi, spLo)*1000000)/1000000;
             numLo.setText(Double.toString(value));
         }
         catch(Exception e) {
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             ti = Double.parseDouble(numTi.getText().toString());
-            double value = calculate(ti, spTi, spTo);
+            double value = Math.round(calculate(ti, spTi, spTo)*1000000)/1000000;
             numTo.setText(Double.toString(value));
         }
         catch(Exception e) {
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             wi = Double.parseDouble(numWi.getText().toString());
-            double value =calculate(wi, spWi, spWo);
+            double value = Math.round(calculate(wi, spWi, spWo)*1000000)/1000000;
             numWo.setText(Double.toString(value));
         }
         catch(Exception e) {
