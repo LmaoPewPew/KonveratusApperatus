@@ -134,13 +134,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             li = Double.parseDouble(numLi.getText().toString());
+            double value = calculate(li, spLi, spLo);
+            numLo.setText(Double.toString(value));
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
+            numLo.setText("0.0");
         }
-
-        double value = calculate(li, spLi, spLo);
-        numLo.setText(Double.toString(value));
     }
 
     //button Logic Temp
@@ -155,14 +155,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             ti = Double.parseDouble(numTi.getText().toString());
+            double value = calculate(ti, spTi, spTo);
+            numTo.setText(Double.toString(value));
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
+            numLo.setText("0.0");
         }
-
-        double value = calculate(ti, spTi, spTo);
-        numTo.setText(Double.toString(value));
-
     }
 
     //button Logic Weight
@@ -177,47 +176,245 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             wi = Double.parseDouble(numWi.getText().toString());
+            double value = calculate(wi, spWi, spWo);
+            numWo.setText(Double.toString(value));
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
+            numLo.setText("0.0");
         }
-
-        double value = calculate(wi, spWi, spWo);
-        numWo.setText(Double.toString(value));
-    }
+ }
 
     // Hier wird gerechnet
     public double calculate (double num, Spinner spIn, Spinner spOut) {
         //Spinner
         String unitIn = spIn.getSelectedItem().toString();
         String unitOut = spOut.getSelectedItem().toString();
+        Log.d("Unit", unitIn);
+        Log.d("Unit", unitOut);
 
         //Lenght
         if (unitIn.equals("Kilometer")) {
-            Log.d("Penis", unitIn);
             if (unitOut.equals("Meter")) {
+                return num *= 1000;
+            } else if (unitOut.equals("Centimeter")) {
+                return num *= 100000;
+            } else if (unitOut.equals("Milimeter")) {
+                return num *= 1000000;
+            } else if (unitOut.equals("Meilen")) {
+                return num *= 0.621371;
+            } else if (unitOut.equals("Fuß")) {
+                return num *= 3280.84;
+            } else if (unitOut.equals("Inch")) {
+                return num *= 39370;
+            } else
+                return num;
 
-                Log.d("Penis", unitOut);
-            }
+        }else if (unitIn.equals("Meter")) {
+            if (unitOut.equals("Kilometer")) {
+                return num /= 1000;
+            } else if (unitOut.equals("Centimeter")) {
+                return num *= 100;
+            } else if (unitOut.equals("Milimeter")) {
+                return num *= 1000;
+            } else if (unitOut.equals("Meilen")) {
+                return num /= 1609 ;
+            } else if (unitOut.equals("Fuß")) {
+                return num *= 3.281;
+            } else if (unitOut.equals("Inch")) {
+                return num *= 39.37;
+            } else
+                return num;
+
+        }else if (unitIn.equals("Centimeter")) {
+            if (unitOut.equals("Meter")) {
+                return num /= 100;
+            } else if (unitOut.equals("Kilometer")) {
+                return num /= 100000;
+            } else if (unitOut.equals("Milimeter")) {
+                return num *= 10;
+            } else if (unitOut.equals("Meilen")) {
+                return num /= 160934;
+            } else if (unitOut.equals("Fuß")) {
+                return num *= 3280.84;
+            } else if (unitOut.equals("Inch")) {
+                return num *= 2.54;
+            } else
+                return num;
+
+        }else if (unitIn.equals("Milimeter")) {
+            if (unitOut.equals("Meter")) {
+                return num /= 1000;
+            } else if (unitOut.equals("Centimeter")) {
+                return num /= 10;
+            } else if (unitOut.equals("Kilometer")) {
+                return num /= 1000000;
+            } else if (unitOut.equals("Meilen")) {
+                return num /= 1.609e+6;
+            } else if (unitOut.equals("Fuß")) {
+                return num /= 305 ;
+            } else if (unitOut.equals("Inch")) {
+                return num /= 25.4;
+            } else
+                return num;
+
+        }else if (unitIn.equals("Meilen")) {
+            if (unitOut.equals("Meter")) {
+                return num *= 1609;
+            } else if (unitOut.equals("Centimeter")) {
+                return num *= 160934;
+            } else if (unitOut.equals("Milimeter")) {
+                return num *= 1.609e+6;
+            } else if (unitOut.equals("Kilometer")) {
+                return num *= 1.609;
+            } else if (unitOut.equals("Fuß")) {
+                return num *= 5280;
+            } else if (unitOut.equals("Inch")) {
+                return num *= 63360;
+            } else
+                return num;
+
+        }else if (unitIn.equals("Fuß")) {
+            if (unitOut.equals("Meter")) {
+                return num /= 3.281;
+            } else if (unitOut.equals("Centimeter")) {
+                return num *= 30.48;
+            } else if (unitOut.equals("Milimeter")) {
+                return num *= 305;
+            } else if (unitOut.equals("Meilen")) {
+                return num /= 5280;
+            } else if (unitOut.equals("Kilometer")) {
+                return num /= 3281;
+            } else if (unitOut.equals("Inch")) {
+                return num *= 12;
+            } else
+                return num;
+
+        }//Inch IN
+        else if (unitIn.equals("Inch")) {
+            if (unitOut.equals("Meter")) {
+                return num /= 39.37;
+            } else if (unitOut.equals("Centimeter")) {
+                return num *= 2.54;
+            } else if (unitOut.equals("Milimeter")) {
+                return num *= 25.4;
+            } else if (unitOut.equals("Meilen")) {
+                return num /= 63360;
+            } else if (unitOut.equals("Fuß")) {
+                return num /= 12;
+            } else if (unitOut.equals("Inch")) {
+                return num *= 1;
+            } else
+                return num;
         }
-
         //Temp
-        if (unitIn.equals("Celsius")) {
+
+        //Celsius IN
+        else if (unitIn.equals("Celsius")) {
             if (unitOut.equals("Fahrenheit")) {
-                Log.d("Penis", unitOut);
+                return num = (num * 9/5) + 32;
+            }
+            else if (unitOut.equals("Kelvin")) {
+                return num += 273.15;
             }
         }
-
+        //Fahrenheit IN
+        else if (unitIn.equals("Fahrenheit")){
+            if (unitOut.equals("Celsius")){
+                return num = (num - 32) * 5/9;
+            }
+            else if (unitOut.equals("Kelvin")){
+                return num = (num - 32) * 5/9 + 273.15;
+            }
+        }
+        //Kelvin IN
+        else if (unitIn.equals("Kelvin")){
+            if (unitOut.equals("Celsius")){
+                return num-= 273.15;
+            }
+            else if (unitOut.equals("Fahrenheit")){
+                return num = (num - 273.15) * 9/5 + 32;
+            }
+        }
         //Weight
-        if (unitIn.equals("Tonne")) {
-            if (unitOut.equals("Fahrenheit")) {
-                Log.d("Penis", unitOut);
+
+        //Tonne IN
+        else if (unitIn.equals("Tonne")) {
+            if (unitOut.equals("Kilogramm")) {
+                return num *= 1000;
+            }
+            else if (unitOut.equals("gramm")){
+                return num /= 1000000;
+            }
+            else if (unitOut.equals("Ton (us)")){
+                return num *= 1102;
+            }
+            else if (unitOut.equals("Pounds")){
+                return num *= 2205;
             }
         }
-
-        return 0;
+        //Kilogramm IN
+        else if (unitIn.equals("Kilogramm")){
+            if (unitOut.equals("Tonne")){
+                return num /= 1000;
+            }
+            else if (unitOut.equals("gramm")){
+                return num *= 1000;
+            }
+            else if (unitOut.equals("Ton (us)")){
+                return num /= 907;
+            }
+            else if (unitOut.equals("Pounds")){
+                return num *= 2205;
+            }
+        }
+        //Gramm IN
+        else if (unitIn.equals("gramm")){
+            if(unitOut.equals("Tonne")){
+                return num *= 1000000;
+            }
+            else if (unitOut.equals("Kilogramm")){
+                return num /= 1000;
+            }
+            else if (unitOut.equals("Ton (us)")){
+                return num /=  907185;
+            }
+            else if (unitOut.equals("Pounds")){
+                return num /= 454;
+            }
+        }
+        //Ton (us) IN
+        else if (unitIn.equals("Ton (us)")){
+            if(unitOut.equals("Tonne")){
+                return num /= 1.102;
+            }
+            else if (unitOut.equals("Kilogramm")){
+                return num *= 907;
+            }
+            else if (unitOut.equals("gramm")){
+                return num *= 907185;
+            }
+            else if (unitOut.equals("Pounds")){
+                return num *= 2000;
+            }
+        }
+        //Pounds IN
+        else if (unitIn.equals("Pounds")){
+            if(unitOut.equals("Tonne")){
+                return num /= 2205;
+            }
+            else if (unitOut.equals("Kilogramm")){
+                return num /= 2.205;
+            }
+            else if (unitOut.equals("Ton (us)")){
+                return num /= 2000;
+            }
+            else if (unitOut.equals("gramm")){
+                return num *= 454;
+            }
+        }
+        return num;
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
