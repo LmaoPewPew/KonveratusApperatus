@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num /= 1000000;
             }
             else if (unitOut.equals("Ton (us)")){
-                return num *= 1102;
+                return num *= 1.102;
             }
             else if (unitOut.equals("Pounds")){
                 return num *= 2205;
