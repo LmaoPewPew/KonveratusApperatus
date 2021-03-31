@@ -61,65 +61,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         MobileAds.initialize(this, "ca-app-pub-2320726719972355~3050095120");
         AdRequest adReq = new AdRequest.Builder().build();
         adBanner.loadAd(adReq);
-
-                    //Spinner
-    /*      spLi = findViewById(R.id.spLengthIn);
-        spLo = findViewById(R.id.spLengthOut);
-
-        String[] length = {"Kilometer", "Meter", "Centimeter", "Milimeter", "Meilen", "Fuß", "Inch"};
-        ArrayAdapter ad = new ArrayAdapter<String>{ this, R.layout.support_simple_spinner_dropdown_item, length};
-        spLi.setAdapter(ad);
-
-        String[] length2 = {"Kilometer", "Meter", "Centimeter", "Milimeter", "Meilen", "Fuß", "Inch"};
-        ArrayAdapter ad2 = new ArrayAdapter<String>{ this, R.layout.support_simple_spinner_dropdown_item, length2};
-        spLo.setAdapter(ad2);
-    */
-
-        /*  //length
-        View vLength = getLayoutInflater().inflate(R.layout.fragment_lenght, null);
-
-        Spinner spLengthIn = vLength.findViewById(R.id.spLengthIn);
-        ArrayAdapter<CharSequence> adLengthIn = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
-        adLengthIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spLengthIn.setAdapter(adLengthIn);
-        spLengthIn.setOnItemSelectedListener(this);
-
-        Spinner spLengthOut = vLength.findViewById(R.id.spLengthOut);
-        ArrayAdapter<CharSequence> adLengthOut = ArrayAdapter.createFromResource(this, R.array.length, android.R.layout.simple_spinner_item);
-        adLengthOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spLengthOut.setAdapter(adLengthOut);
-        spLengthOut.setOnItemSelectedListener(this);
-
-        //Temperatur
-        View vTemp = getLayoutInflater().inflate(R.layout.fragment_temp, null);
-
-        Spinner spTempIn = vTemp.findViewById(R.id.spTempIn);
-        ArrayAdapter<CharSequence> adTempIn = ArrayAdapter.createFromResource(this, R.array.temp, android.R.layout.simple_spinner_item);
-        adTempIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spTempIn.setAdapter(adLengthIn);
-        spTempIn.setOnItemSelectedListener(this);
-
-        Spinner spTempOut = vTemp.findViewById(R.id.spTempOut);
-        ArrayAdapter<CharSequence> adTempOut = ArrayAdapter.createFromResource(this, R.array.temp, android.R.layout.simple_spinner_item);
-        adTempOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spTempOut.setAdapter(adLengthOut);
-        spTempOut.setOnItemSelectedListener(this);
-
-        //weight
-        View vWeight = getLayoutInflater().inflate(R.layout.fragment_weight, null);
-
-        Spinner spWeightIn = vWeight.findViewById(R.id.spWeightIn);
-        ArrayAdapter<CharSequence> adWeightIn = ArrayAdapter.createFromResource(this, R.array.weight, android.R.layout.simple_spinner_item);
-        adWeightIn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spWeightIn.setAdapter(adLengthIn);
-        spWeightIn.setOnItemSelectedListener(this);
-
-        Spinner spWeightOut = vWeight.findViewById(R.id.spWeightOut);
-        ArrayAdapter<CharSequence> adWeightOut = ArrayAdapter.createFromResource(this, R.array.weight, android.R.layout.simple_spinner_item);
-        adWeightOut.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spWeightOut.setAdapter(adLengthOut);
-        spWeightOut.setOnItemSelectedListener(this);
-    //*/
     }
 
     //button Logic Length
@@ -176,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         try {
             wi = Double.parseDouble(numWi.getText().toString());
-            double value = calculate(wi, spWi, spWo);
+            double value =calculate(wi, spWi, spWo);
             numWo.setText(Double.toString(value));
         }
         catch(Exception e) {
