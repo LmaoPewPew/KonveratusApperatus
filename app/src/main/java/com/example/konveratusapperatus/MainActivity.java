@@ -131,7 +131,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         numLi = findViewById(R.id.numLengthIn);
         numLo = findViewById(R.id.numLengthOut);
-        //li = Double.parseDouble(numLi.getText().toString());;
+
+        try {
+            li = Double.parseDouble(numLi.getText().toString());
+        }
+        catch(Exception e) {
+            Log.d("Exeption","Keine Zahl eingegeben");
+        }
 
         double value = calculate(li, spLi, spLo);
         numLo.setText(Double.toString(value));
@@ -146,10 +152,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         numTi = findViewById(R.id.numTempIn);
         numTo = findViewById(R.id.numTempOut);
-        //ti = Double.parseDouble(numTi.getText().toString());
+
+        try {
+            ti = Double.parseDouble(numTi.getText().toString());
+        }
+        catch(Exception e) {
+            Log.d("Exeption","Keine Zahl eingegeben");
+        }
 
         double value = calculate(ti, spTi, spTo);
-        numLo.setText(Double.toString(value));
+        numTo.setText(Double.toString(value));
+
     }
 
     //button Logic Weight
@@ -161,10 +174,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         numWi = findViewById(R.id.numWeightIn);
         numWo = findViewById(R.id.numWeightOut);
-        //wi = Double.parseDouble(numWi.getText().toString());
+
+        try {
+            wi = Double.parseDouble(numWi.getText().toString());
+        }
+        catch(Exception e) {
+            Log.d("Exeption","Keine Zahl eingegeben");
+        }
 
         double value = calculate(wi, spWi, spWo);
-        numLo.setText(Double.toString(value));
+        numWo.setText(Double.toString(value));
     }
 
     // Hier wird gerechnet
@@ -177,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (unitIn.equals("Kilometer")) {
             Log.d("Penis", unitIn);
             if (unitOut.equals("Meter")) {
-                // numLo = numLi * 10;
+
                 Log.d("Penis", unitOut);
             }
         }
