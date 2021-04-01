@@ -1,5 +1,6 @@
 package com.example.konveratusapperatus;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -73,7 +74,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         try {
             li = Double.parseDouble(numLi.getText().toString());
             double value = calculate(li, spLi, spLo);
+            round(value);
             numLo.setText(Double.toString(value));
+
+            //numLo.setText(Double.toString(value));
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         try {
             ti = Double.parseDouble(numTi.getText().toString());
             double value = calculate(ti, spTi, spTo);
+            round(value);
             numTo.setText(Double.toString(value));
         }
         catch(Exception e) {
@@ -115,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         try {
             wi = Double.parseDouble(numWi.getText().toString());
             double value = calculate(wi, spWi, spWo);
+            round(value);
             numWo.setText(Double.toString(value));
         }
         catch(Exception e) {
@@ -122,6 +128,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             numLo.setText("Ausgabe");
         }
  }
+
+    public double round(double x){
+        x = Math.round(x * 10000) + .5 / 10000;
+        return x;
+    }
 
     // Hier wird gerechnet
     public double calculate (double num, Spinner spIn, Spinner spOut) {
