@@ -14,8 +14,9 @@
             android:icon="@drawable/thermometer"
             android:title="@string/menu_temp" />
         <item
-            android:id="@+id/nav_sweight"
+            android:id="@+id/nav_weight"
             android:icon="@drawable/weight_scale"
             android:title="@string/menu_weight" />
     </group>
+
 </menu>

@@ -1,13 +1,10 @@
 package com.example.konveratusapperatus;
 
 import android.os.Bundle;
-import android.telephony.mbms.StreamingServiceInfo;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -48,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_lenght, R.id.nav_temp, R.id.nav_sweight)
+                R.id.nav_lenght, R.id.nav_temp, R.id.nav_weight)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -80,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
-            numLo.setText("0.0");
+            numLo.setText("Ausgabe");
         }
     }
 
@@ -101,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
-            numLo.setText("0.0");
+            numLo.setText("Ausgabe");
         }
     }
 
@@ -122,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         catch(Exception e) {
             Log.d("Exeption","Keine Zahl eingegeben");
-            numLo.setText("0.0");
+            numLo.setText("Ausgabe");
         }
  }
 
@@ -135,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Log.d("Unit", unitOut);
 
         //Lenght
+        // KM
         if (unitIn.equals("Kilometer")) {
             if (unitOut.equals("Meter")) {
                 return num *= 1000;
@@ -151,7 +149,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else
                 return num;
 
-        }else if (unitIn.equals("Meter")) {
+        }// M
+        else if (unitIn.equals("Meter")) {
             if (unitOut.equals("Kilometer")) {
                 return num /= 1000;
             } else if (unitOut.equals("Centimeter")) {
@@ -167,7 +166,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else
                 return num;
 
-        }else if (unitIn.equals("Centimeter")) {
+        }// CM
+        else if (unitIn.equals("Centimeter")) {
             if (unitOut.equals("Meter")) {
                 return num /= 100;
             } else if (unitOut.equals("Kilometer")) {
@@ -183,7 +183,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else
                 return num;
 
-        }else if (unitIn.equals("Milimeter")) {
+        }// MM
+        else if (unitIn.equals("Milimeter")) {
             if (unitOut.equals("Meter")) {
                 return num /= 1000;
             } else if (unitOut.equals("Centimeter")) {
@@ -199,7 +200,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else
                 return num;
 
-        }else if (unitIn.equals("Meilen")) {
+        }// Mile
+        else if (unitIn.equals("Meilen")) {
             if (unitOut.equals("Meter")) {
                 return num *= 1609;
             } else if (unitOut.equals("Centimeter")) {
@@ -215,7 +217,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else
                 return num;
 
-        }else if (unitIn.equals("Fuß")) {
+        }// Feet
+        else if (unitIn.equals("Fuß")) {
             if (unitOut.equals("Meter")) {
                 return num /= 3.281;
             } else if (unitOut.equals("Centimeter")) {
@@ -231,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else
                 return num;
 
-        }//Inch IN
+        }//Inch
         else if (unitIn.equals("Inch")) {
             if (unitOut.equals("Meter")) {
                 return num /= 39.37;
@@ -250,7 +253,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         //Temp
 
-        //Celsius IN
+        //Celsius
         else if (unitIn.equals("Celsius")) {
             if (unitOut.equals("Fahrenheit")) {
                 return num = (num * 9/5) + 32;
@@ -259,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num += 273.15;
             }
         }
-        //Fahrenheit IN
+        //Fahrenheit
         else if (unitIn.equals("Fahrenheit")){
             if (unitOut.equals("Celsius")){
                 return num = (num - 32) * 5/9;
@@ -268,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num = (num - 32) * 5/9 + 273.15;
             }
         }
-        //Kelvin IN
+        //Kelvin
         else if (unitIn.equals("Kelvin")){
             if (unitOut.equals("Celsius")){
                 return num-= 273.15;
@@ -279,13 +282,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         //Weight
 
-        //Tonne IN
+        //Tonne
         else if (unitIn.equals("Tonne")) {
             if (unitOut.equals("Kilogramm")) {
                 return num *= 1000;
             }
             else if (unitOut.equals("gramm")){
-                return num /= 1000000;
+                return num *= 1000000;
             }
             else if (unitOut.equals("Ton (us)")){
                 return num *= 1.102;
@@ -294,7 +297,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num *= 2205;
             }
         }
-        //Kilogramm IN
+        //Kilogramm
         else if (unitIn.equals("Kilogramm")){
             if (unitOut.equals("Tonne")){
                 return num /= 1000;
@@ -306,13 +309,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num /= 907;
             }
             else if (unitOut.equals("Pounds")){
-                return num *= 2205;
+                return num *= 2.205;
             }
         }
-        //Gramm IN
+        //Gramm
         else if (unitIn.equals("gramm")){
             if(unitOut.equals("Tonne")){
-                return num *= 1000000;
+                return num /= 1000000;
             }
             else if (unitOut.equals("Kilogramm")){
                 return num /= 1000;
@@ -324,7 +327,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num /= 454;
             }
         }
-        //Ton (us) IN
+        //Ton (us)
         else if (unitIn.equals("Ton (us)")){
             if(unitOut.equals("Tonne")){
                 return num /= 1.102;
@@ -339,7 +342,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return num *= 2000;
             }
         }
-        //Pounds IN
+        //Pounds
         else if (unitIn.equals("Pounds")){
             if(unitOut.equals("Tonne")){
                 return num /= 2205;

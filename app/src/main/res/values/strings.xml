@@ -10,7 +10,9 @@
     <string name="menu_length">Länge</string>
     <string name="menu_temp">Temperatur</string>
     <string name="menu_weight">Gewicht</string>
-    
+
+    <string name="menu_set">Settings</string>
+
     <string-array name="length">
         <item>Kilometer</item>
         <item>Meter</item>
