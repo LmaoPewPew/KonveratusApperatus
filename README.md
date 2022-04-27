@@ -1,3 +1,3 @@
 # KonveratusApperatus
 
-Eine Einheits-Umrechnungs App in den man Jegliche EInheiten Konvertieren Kann!
+Eine Einheiten Umrechnungs App in den man jegliche Einheiten Konvertieren kann!
